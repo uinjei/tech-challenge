@@ -1,4 +1,11 @@
-const addMilk = () => console.log('add milk');
+console.logCopy = console.log.bind(console);
+
+console.log = function(data) {
+    var timestamp = '[' + Date.now() + '] ';
+    this.logCopy(timestamp, data);
+};
+
+const addMilk = () => console.log('add milk', );
 const addIce = () => console.log('add ice');
 const addTapioca = () => console.log('add tapioca');
 const addSyrup = () => console.log('add syrup');

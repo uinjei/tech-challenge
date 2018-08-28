@@ -1,4 +1,4 @@
-const addMilk = () => console.log('add milk', );
+const addMilk = () => console.log('add milk');
 const addIce = () => console.log('add ice');
 const addTapioca = () => console.log('add tapioca');
 const addSyrup = () => console.log('add syrup');

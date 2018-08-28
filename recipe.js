@@ -1,27 +1,25 @@
-console.logCopy = console.log.bind(console);
+const delay = (ms) => new Promise(
+  (resolve) => setTimeout(resolve, ms)
+);
 
-console.log = function(data) {
-    var timestamp = '[' + Date.now() + '] ';
-    this.logCopy(timestamp, data);
-};
-
-const addMilk = () => console.log('add milk', );
-const addIce = () => console.log('add ice');
-const addTapioca = () => console.log('add tapioca');
-const addSyrup = () => console.log('add syrup');
-const shake = () => console.log('shake');
-
-const recipe = () => {
-   const _addMilk = new Promise((resolve, reject) => {
-     addMilk();
-   });
-   const _addIce = new Promise((resolve, reject) => {
-     addIce();
-   });
-  Promise.all([_addMilk, _addIce])
-  .then(addTapioca())
-  .then(addSyrup())
-  .then(shake());
-}
-
-recipe();
+delay(0)
+  .then(() => {
+    console.log('Add tea')
+    return delay(1500);
+  })
+  .then(() => {
+    console.log('Add milk');
+    console.log('Add ice');
+    return delay(3000);
+  }).then(() => {
+    console.log('Add tapioca');
+    return delay(500);
+  }).then(() => {
+    console.log('Add Syrup');
+    return delay(1500);
+  }).then(() => {
+    console.log('Shake');
+    return delay(1500);
+  }).then(() => {
+    console.log('Enjoy!');
+  });

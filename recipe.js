@@ -1,6 +1,4 @@
-const delay = (ms) => new Promise(
-  (resolve) => setTimeout(resolve, ms)
-);
+console.logCopy = console.log.bind(console);
 
 console.log = function(data) {
     var timestamp = '[' + Date.now() + '] ';

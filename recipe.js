@@ -5,23 +5,49 @@ console.log = function(data) {
     this.logCopy(timestamp, data);
 };
 
-const addMilk = () => console.log('add milk', );
-const addIce = () => console.log('add ice');
-const addTapioca = () => console.log('add tapioca');
-const addSyrup = () => console.log('add syrup');
-const shake = () => console.log('shake');
-
 const recipe = () => {
-   const _addMilk = new Promise((resolve, reject) => {
-     addMilk();
-   });
-   const _addIce = new Promise((resolve, reject) => {
-     addIce();
-   });
-  Promise.all([_addMilk, _addIce])
-  .then(addTapioca())
-  .then(addSyrup())
-  .then(shake());
+
+  const addTea = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, 'tea done!');
+  });
+
+  const addMilk = new Promise((resolve, reject) => {
+    setTimeout(resolve, 1000, 'milk done!');
+  });
+
+  const addIce = new Promise((resolve, reject) => {
+    setTimeout(resolve, 5000, 'ice done!');
+  });
+
+  const addSyrup = new Promise((resolve, reject) => {
+    setTimeout(resolve, 8000, 'syrup done!');
+  });
+
+  const addTapioca = new Promise((resolve, reject) => {
+    setTimeout(resolve, 10000, 'tapioca done!');
+  });
+
+  const shake = new Promise((resolve, reject) => {
+    setTimeout(resolve, 20000, 'shake');
+  });
+
+  addTea.then(values => {
+    console.log(values);
+    Promise.all([
+      addMilk,
+      addIce
+    ]).then(values => {
+      console.log(values);
+      addSyrup.then(values => {
+        console.log(values);
+        addTapioca.then(values => {
+          console.log(values);
+          console.log('enjoy!')
+        });
+      })
+    });
+  });
+    
 }
 
 recipe();

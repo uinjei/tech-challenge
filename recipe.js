@@ -1,10 +1,3 @@
-console.logCopy = console.log.bind(console);
-
-console.log = function(data) {
-    var timestamp = '[' + Date.now() + '] ';
-    this.logCopy(timestamp, data);
-};
-
 const recipe = () => {
 
   const addTea = new Promise((resolve, reject) => {

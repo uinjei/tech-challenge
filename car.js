@@ -1,7 +1,22 @@
+const Cars = {
+  Ciaz: {
+    sound: 'a'
+  },
+  City: {
+    sound: 'b'
+  },
+  Vios: {
+    sound: 'c'
+  },
+  Rio: {
+    sound: 'd'
+  }
+};
+
 //ES6
 class Car {
-  constructor(sound) {
-    this.sound = sound;
+  constructor(car) {
+    Object.assign(this, car);
   }
 
   beep() {
@@ -10,10 +25,10 @@ class Car {
 
 }
 
-const cias = new Car('a');
+const cias = new Car(Cars.Ciaz);
 cias.beep();
 
-const city = new Car('b');
+const city = new Car(Cars.City);
 city.beep();
 
 //ES5

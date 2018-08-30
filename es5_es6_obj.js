@@ -13,8 +13,11 @@ es6Obj.f();
 var es5Obj = {
   name: "Sam",
   placesVisited: ["Manila", "Pasig", "Mandaluyong", "Taguig"], 
-  f: function(){
-    this.placesVisited.forEach(place => console.log(this.name,' has visited ', place));
+  f: function() {
+    var self = this;
+    self.placesVisited.forEach(function(place) {
+      console.log(self.name,' has visited ', place)
+    });
   }
 }
 

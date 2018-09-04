@@ -100,8 +100,8 @@ INSERT INTO public.whitelist VALUES (4, 'github.com', 'Github');
 INSERT INTO public.whitelist VALUES (5, 'gitlab.com', 'Gitlab');
 INSERT INTO public.whitelist VALUES (6, 'microsoft.com', 'Microsoft');
 INSERT INTO public.whitelist VALUES (7, 'youtube.com', 'Youtube');
-INSERT INTO public.whitelist VALUES (8, 'sss.gov.ph', 'name SSS');
-INSERT INTO public.whitelist VALUES (9, 'alorica.com', 'name Alorica');
+INSERT INTO public.whitelist VALUES (8, 'sss.gov.ph', 'SSS');
+INSERT INTO public.whitelist VALUES (9, 'alorica.com', 'Alorica');
 INSERT INTO public.whitelist VALUES (10, 'outlook.office.com', 'MS Outlook');
 
 

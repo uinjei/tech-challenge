@@ -6,4 +6,4 @@ function obj(s) {
   }
 }
 
-console.log(obj('this')('is')('edwin'));
+console.log(obj('this')('is')('me'));
